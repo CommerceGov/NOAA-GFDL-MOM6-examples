@@ -245,7 +245,12 @@ TIDE_SAL_SCALAR_VALUE = 0.094   !   [m m-1]
 
 ! === module MOM_PressureForce ===
 
-! === module MOM_PressureForce_AFV ===
+! === module MOM_PressureForce_FV ===
+TIDES_ANSWER_DATE = 20230630    ! default = 99991231
+                                ! The vintage of self-attraction and loading (SAL) and tidal forcing
+                                ! calculations in Boussinesq mode. Values below 20230701 recover the old answers
+                                ! in which the SAL is part of the tidal forcing calculation.  The change is due
+                                ! to a reordered summation and the difference is only at bit level.
 
 ! === module MOM_hor_visc ===
 LAPLACIAN = True                !   [Boolean] default = False

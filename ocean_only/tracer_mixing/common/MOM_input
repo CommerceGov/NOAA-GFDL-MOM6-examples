@@ -356,6 +356,11 @@ KHTR = 1.0E+04                  !   [m2 s-1] default = 0.0
 ! This module implements neutral diffusion of tracers
 USE_NEUTRAL_DIFFUSION = True    !   [Boolean] default = False
                                 ! If true, enables the neutral diffusion module.
+NDIFF_ANSWER_DATE = 20240101    ! default = 99991231
+                                ! The vintage of the order of arithmetic to use for the neutral diffusion.
+                                ! Values of 20240330 or below recover the answers from the original form of the
+                                ! neutral diffusion code, while higher values use mathematically equivalent
+                                ! expressions that recover rotational symmetry.
 
 ! === module MOM_sum_output ===
 MAXTRUNC = 10                   !   [truncations save_interval-1] default = 0

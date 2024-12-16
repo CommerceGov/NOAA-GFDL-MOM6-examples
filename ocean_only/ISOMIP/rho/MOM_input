@@ -190,6 +190,11 @@ INTERPOLATION_SCHEME = "P1M_H4" ! default = "P1M_H2"
                                 !  P3M_IH6IH5 (4th-order accurate)
                                 !  PQM_IH4IH3 (4th-order accurate)
                                 !  PQM_IH6IH5 (5th-order accurate)
+REGRIDDING_ANSWER_DATE = 20181231 ! default = 99991231
+                                ! The vintage of the expressions and order of arithmetic to use for regridding.
+                                ! Values below 20190101 result in the use of older, less accurate expressions
+                                ! that were in use at the end of 2018.  Higher values result in the use of more
+                                ! robust and accurate forms of mathematically equivalent expressions.
 BOUNDARY_EXTRAPOLATION = True   !   [Boolean] default = False
                                 ! When defined, a proper high-order reconstruction scheme is used within
                                 ! boundary cells rather than PCM. E.g., if PPM is used for remapping, a PPM
