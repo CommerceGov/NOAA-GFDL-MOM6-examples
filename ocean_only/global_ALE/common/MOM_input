@@ -309,6 +309,13 @@ AH_VEL_SCALE = 0.05             !   [m s-1] default = 0.0
                                 ! scaled viscosity, the Smagorinsky and Leith viscosities, and AH.
 SMAGORINSKY_AH = True           !   [Boolean] default = False
                                 ! If true, use a biharmonic Smagorinsky nonlinear eddy viscosity.
+BACKSCATTER_UNDERBOUND = True   !   [Boolean] default = False
+                                ! If true, the bounds on the biharmonic viscosity are allowed to increase where
+                                ! the Laplacian viscosity is negative (due to backscatter parameterizations)
+                                ! beyond the largest timestep-dependent stable values of biharmonic viscosity
+                                ! when no Laplacian viscosity is applied.  The default is true for historical
+                                ! reasons, but this option probably should not be used because it can contribute
+                                ! to numerical instabilities.
 SMAG_BI_CONST = 0.06            !   [nondim] default = 0.0
                                 ! The nondimensional biharmonic Smagorinsky constant, typically 0.015 - 0.06.
 
@@ -403,6 +410,11 @@ USE_LOTW_BBL_DIFFUSIVITY = True !   [Boolean] default = False
                                 ! If true, uses a simple, imprecise but non-coordinate dependent, model of BBL
                                 ! mixing diffusivity based on Law of the Wall. Otherwise, uses the original BBL
                                 ! scheme.
+LOTW_BBL_ANSWER_DATE = 20190101 ! default = 99991231
+                                ! The vintage of the order of arithmetic and expressions in the LOTW_BBL
+                                ! calculations.  Values below 20240630 recover the original answers, while
+                                ! higher values use more accurate expressions.  This only applies when
+                                ! USE_LOTW_BBL_DIFFUSIVITY is true.
 
 ! === module MOM_bkgnd_mixing ===
 ! Adding static vertical background mixing coefficients

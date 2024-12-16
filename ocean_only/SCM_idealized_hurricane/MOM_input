@@ -267,6 +267,10 @@ APPLY_NONLOCAL_TRANSPORT = False !   [Boolean] default = True
 INTERP_TYPE = "cubic"           ! default = "quadratic"
                                 ! Type of interpolation to determine the OBL depth.
                                 ! Allowed types are: linear, quadratic, cubic.
+ANSWER_DATE = 20240101          ! default = 99991231
+                                ! The vintage of the order of arithmetic in the CVMix KPP calculations.  Values
+                                ! below 20240501 recover the answers from early in 2024, while higher values use
+                                ! expressions that have been refactored for rotational symmetry.
 %KPP
 
 ! === module MOM_set_diffusivity ===
@@ -320,6 +324,10 @@ IDL_HURR_SCM_BR_BENCH = True    !   [Boolean] default = False
                                 ! (bug) in the wind profile meant to reproduce a previous implementation.
 IDL_HURR_SCM = True             !   [Boolean] default = False
                                 ! Single Column mode switch used in the SCM idealized hurricane wind profile.
+IDL_HURR_SCM_EDGE_TAPER_BUG = True !   [Boolean] default = False
+                                ! If true and IDL_HURR_SCM is true, use a bug that does all of the tapering and
+                                ! inflow angle calculations for radii between RAD_EDGE and RAD_AMBIENT as though
+                                ! they were at RAD_EDGE.
 
 ! === module MOM_main (MOM_driver) ===
 DAYMAX = 3.0                    !   [days]
