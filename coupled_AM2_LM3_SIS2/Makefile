@@ -14,7 +14,7 @@ LM3_BUILD ?= ../shared/LM3/build
 # Autoconf configuration
 MOM_CODEBASE ?= ../src/MOM6
 MAKEFILE_IN ?= $(MOM_CODEBASE)/ac/Makefile.in
-CONFIGURE_AC ?= ../ac/configure.coupled.ac
+CONFIGURE_AC ?= configure.coupled.ac
 M4DIR ?= $(MOM_CODEBASE)/ac/m4
 MAKEDEP ?= $(MOM_CODEBASE)/ac/makedep
 
